@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="/assets/img/home.png" alt="" />
+    <ion-card-header>
+      <ion-card-title>Welcome to Natura Home</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>The online store where you can buy the best items of the season, at good prices, with excellent quality and the
+        best shipping service.</p>
+    </ion-card-content>
+  </ion-card>
+  
+  
+  <ion-list>
+    <ion-title >New Products</ion-title>
+    <ion-item-sliding *ngFor="let product of all">
+      <ion-card>
+        <img src="{{product.img}}"  style="width: 100px; height:100px" />
+        <ion-card-header>
+            <ion-card-subtitle color="warning"><strong>${{product.price}}</strong></ion-card-subtitle>
+          <ion-card-title color="secondary"><strong>{{product.name}}</strong></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{product.description}}
+        </ion-card-content>
+      </ion-card>
+      
+    </ion-item-sliding>
+  </ion-list>
+  
+</ion-content>

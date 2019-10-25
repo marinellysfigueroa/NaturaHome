@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyAHGLjx-J3Bojf22kBsH2GBucqyh14WRDQ",
+    authDomain: "natura-home.firebaseapp.com",
+    databaseURL: "https://natura-home.firebaseio.com",
+    projectId: "natura-home",
+    storageBucket: "natura-home.appspot.com",
+    messagingSenderId: "521746256439",
+    appId: "1:521746256439:web:fb27913f430fa7114b25b2",
+    measurementId: "G-V1WM5CV6ML"
+  } 
 };
 
 /*

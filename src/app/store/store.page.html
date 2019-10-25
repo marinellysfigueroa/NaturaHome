@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Store</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+      <ion-searchbar></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-title >Products</ion-title>
+        <ion-item-sliding *ngFor="let product of all">
+          <ion-card>
+            <img src="{{product.img}}"  style="width: 300px; height:150px" />
+            <ion-card-header>
+                <ion-card-subtitle color="warning"><strong>${{product.price}}</strong></ion-card-subtitle>
+              <ion-card-title color="secondary"><strong>{{product.name}}</strong></ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{product.description}}
+              <ion-item-options side="end">
+            <ion-item-option (click)="onRemove(item)" color="secondary">
+              <ion-icon name="checkmark" slot="end"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+            </ion-card-content>
+          </ion-card>
+          <ion-item-options side="end">
+            <ion-item-option (click)="onRemove(item)" color="secondary">
+              <ion-icon name="checkmark" slot="end"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button color="secondary" routerLink='/product' routerDirection="forward">
+            <ion-icon name="add" ></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+</ion-content>
+

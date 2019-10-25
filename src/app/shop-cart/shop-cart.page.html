@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Shopping Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let product of all">
+      <ion-card>
+         <ion-card-header>
+          <ion-card-title color="secondary"><strong>{{product.name}}</strong></ion-card-title>
+          <ion-card-subtitle color="warning"><strong>${{product.price}}</strong></ion-card-subtitle>         
+          <img src="{{product.img}}" style="width: 100px; height:100px" />       
+        </ion-card-header>        
+      </ion-card>
+      <ion-item-options side="end">
+        <ion-item-option (click)="onRemove(item)" color="secondary">
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="secondary"><strong>INCLUDING</strong></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item-sliding *ngFor="let product of all">          
+          <ion-item>
+              <ion-label>{{product.name}}</ion-label>
+              <ion-note slot="end" >${{product.price}}</ion-note>
+            </ion-item>          
+        </ion-item-sliding>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
